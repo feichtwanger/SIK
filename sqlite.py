@@ -16,9 +16,7 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS user(
 
 
 # функция для добавления новой задачи:    
-def add_task():
-        
-    app = input("Name App: ")
+def add_task(app):
     first_time_start = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")# Получаем текущее время в strftime()
     time_start = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     status = "Start"
@@ -80,14 +78,12 @@ def same_task(task_id):
         print("Данные успешно обновлены.")
     except sqlite3.Error as e:
         print(f"Ошибка обновления данных: {e}")
-    
     # Закрываем соединение
     
 
 # Вызываем функцию для обновления данных
 #same_task()
-    
-end_task(7)
 
 
-add_task()
+
+same_task(9)
